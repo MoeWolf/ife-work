@@ -64,8 +64,17 @@ li {
 .content-area .bgcimage .image-description {
 	position: relative;
 	width: 980px;
-	height: 200px;
 	bottom: 0px;
 	margin: 0px auto;
+}
+.content-area .bgcimage .image-description .context {
+	position: absolute;
+	width: 250px;
+	height: 200px;
+	right: 0px;
+	top: -200px;
 	background-color: #66ccff;
+}
+.bgcimage {
+    font-size: 0;   /* 消除4px的间距 */
 }
