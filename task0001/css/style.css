@@ -163,6 +163,7 @@ li {
 	text-indent: 2em;
 	font-size: 14px;
 	margin: 30px auto 0;
+	text-align: left;
 }
 /*footer的样式*/
 .footer {
