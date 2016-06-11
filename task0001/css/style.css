@@ -185,4 +185,23 @@ li {
 .links {
 	color: #fff;
 	font-size: 14px;
+	overflow: hidden;
+	width: 1000px;
+	margin: 10px auto;
+}
+.links ul {
+	display: inline-block;
+	position: relative;
+	float: left;
+	margin-top: 50px;
+	margin-bottom: -10000px;
+	margin-left: 60px;
+	margin-right: 60px;
+	padding-bottom: 10000px;
+}
+.links .label{
+	margin-bottom: 30px;
+}
+.links li {
+	text-align: left;
 }
