@@ -1,0 +1,71 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	font-family: Microsoft YaHei, sans-serif;
+}
+body{
+	min-width: 980px;
+}
+a {
+	text-decoration: none;
+	color: #fff;
+}
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+/*footer的样式 */
+.header {
+	width: 100%;
+	height: 80px;
+	position: relative;
+	background-color: #522A5C;
+}
+.nav-wrap {
+	position: relative;
+	width: 980px;
+	height: 80px;
+	margin: 0 auto;
+}
+.nav-wrap .logo {
+	position: absolute;
+	width: 180px;
+	height: 40px;
+	display: inline-block;
+	bottom: 5px;
+}
+.nav-wrap .logo img {
+	width: 180px;
+	height: 40px;
+}
+.nav-wrap ul {
+	position: absolute;
+	right: 0px;
+	bottom: 5px;
+}
+.nav-wrap li {
+    float: left;
+    font : 14px SimSun, sans-serif;
+    margin-left: 28px;
+    
+}
+.header .gitlogo{
+	position: absolute;
+	right: 10px;
+	bottom: 0px;
+}
+/*内容区样式*/
+.content-area .bgcimage img{
+	position: relative;
+	width: 100%;
+	height: 650px;
+}
+.content-area .bgcimage .image-description {
+	position: relative;
+	width: 980px;
+	height: 200px;
+	bottom: 0px;
+	margin: 0px auto;
+	background-color: #66ccff;
+}
