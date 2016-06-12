@@ -247,27 +247,28 @@ li {
 }
 .single-blog .blog-tags {
 	position: absolute;
-	width: 40px;
-	height: 60px;
+	width: 60px;
+	height: 80px;
 	top: 20px;
-	left: -40px;
+	left: -60px;
 }
 .blog-tags .tag-data {
 	position: relative;
-	width: 40px;
-	height: 30px;
+	width: 60px;
+	height: 40px;
+	line-height: 40px;
 	background-color: #47456D;
 	color: #fff;
 	font-size: 14px;
-	text-align: center;
-	padding: auto;
+	text-align: center;	
 }
 .blog-tags .tag-type {
 	position: relative;
-	width: 40px;
-	height: 30px;
+	width: 60px;
+	height: 40px;
+	line-height: 40px;
 	background-color: #6D6A9A;
 	color: #fff;
 	font-size: 14px;
-	text-align: center;
+	text-align: center;	
 }
