@@ -435,13 +435,38 @@ li {
 	background-color: #3D3B5B;
 	color: #fff;
 }
+/*tags*/
 .tags {
 	position: relative;
 	width: 300px;
-	height: 250px;
+	height: 200px;
 	margin-top: 15px;
 	background-color: #fff;
 	color: #3D3B5B;
-	font-size: 18px;
-	
+	font-size: 14px;
+}
+.tags h2 {
+	position: relative;
+	margin-left: 20px;
+	margin-bottom: 30px;
+	top: 20px;
+	font-size: 20px;
+	color: #999;
+}
+.tags-content {
+	position: relative;
+	width: 260px;
+	height: 260px;
+	margin: auto;
+}
+.tags span {
+	color: #3D3B5B;
+	padding-left: 10px;
+}
+.tags .font-big {
+	font-size: 16px;
+	font-weight: 400;
+}
+.tags .font-bigger {
+	font-size: 24px;
 }
