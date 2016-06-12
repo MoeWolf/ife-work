@@ -237,10 +237,11 @@ li {
 	float: left;
 	background-color: #eee;
 	margin-top: 25px;
+	margin-right: 10px;
 }
 .single-blog {
 	position: relative;
-	height: 350px;
+	height: 300px;
 	width: 670px;
 	margin-bottom: 15px;
 	background-color: #fff;
@@ -272,3 +273,61 @@ li {
 	font-size: 14px;
 	text-align: center;	
 }
+.single-blog h1 {
+	font-size: 14px;
+	color: #6D6A9A;
+	padding: 30px 0 15px 20px;
+}
+.single-blog h2 {
+	font-size: 12px;
+	color: #666;
+	padding: 0 0 20px 20px;
+}
+.single-blog p {
+	font-size: 12px;
+	color: #000;
+	padding: 0 20px 100px 30px;
+	text-indent: 2em;
+	line-height: 170%;
+}
+.single-blog section {
+	position: absolute;
+	font-size: 12px;
+	color: #999;
+	right: 30px;
+	bottom: 20px;
+}
+/*翻页*/
+.nextpage {
+	position: relative;
+	width: 580px;
+	height: 30px;
+	margin: 10px auto;
+}
+.nextpage li {
+	position: relative;
+	display: inline-block;
+	height: 30px;
+	line-height: 30px;
+	padding: 0px 15px;
+	margin: 15px 5px;
+	font-size: 14px;
+	color: #999;
+	background-color: #fff;
+}
+.nextpage a {
+	font-size: 14px;
+	color: #000;
+}
+.nextpage .valid-page {
+	color: #000;
+}
+.nextpage .currentpage {
+	background-color: #6D6A9A;
+	color: #fff;
+}
+.nextpage .currentpage a {
+	color: #fff;
+}
+/*工具栏*/
+.
