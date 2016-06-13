@@ -6,6 +6,7 @@
 body{
 	min-width: 980px;
 	font-size: 0;
+	background-color: #eee;
 }
 a {
 	text-decoration: none;
@@ -169,7 +170,7 @@ li {
 .footer {
 	position: relative;
 	width: 100%;
-	height: 420px;
+	height: 421px;
 	background-color: #000;
 	text-align: center;
 }
@@ -187,13 +188,14 @@ li {
 	color: #fff;
 	font-size: 14px;
 	overflow: hidden;
-	width: 1000px;
+	width: 975px;
 	margin: 10px auto;
 }
 .links ul {
 	display: inline-block;
 	position: relative;
 	float: left;
+	width: 75px;
 	margin-top: 50px;
 	margin-bottom: -10000px;
 	margin-left: 60px;
@@ -204,12 +206,13 @@ li {
 	margin-bottom: 30px;
 }
 .links li {
-	text-align: left;
+	text-align: center;
 }
 .copyright {
-	position: absolute;
-	bottom: 0;
-	left: 50%;
+	position: relative;
+	text-align: center;
+	padding-top: 75px;
+	
 }
 .copyright p {
 	font-size: 14px;
@@ -333,36 +336,60 @@ li {
 .blog-tools {
 	position: relative;
 	width: 300px;
-	height: 1075px;
+	height: 1000px;
 	float: right;
 }
-.blog-tools .explore {
+.blog-tools .search {
 	position: relative;
 	width: 300px;
-	height: 100px;
-	line-height: 100px;
+	height: 90px;
+	line-height: 90px;
 	background-color: #fff;
 	margin-top: 25px;
 }
-.blog-tools .explore img {
-	position: relative;
-	width: 180px;
+.explore {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	width: 260px;
 	height: 50px;
-	top: 25px;
-	left: 35px;
+	line-height: 50px;
+	border: 1px solid #ddd;
 }
-.blog-tools .explore div {
+.explore:hover {
+	border-color: #3D3B5B;
+}
+.explore .keyword {
+	position: relative;
+	width: 260px;
+	height: 50px;
+	margin: 0;
+	border: none;
+	outline: medium;
+	background-image: url(../img/search.png);
+	background-repeat: none;
+	background-size:210px 50px;
+}
+.keyword:focus {
+	background-image: none;
+}
+.explore .submit {
 	position: absolute;
 	width: 50px;
 	height: 50px;
 	line-height: 50px;
 	font-size: 20px;
-	top: 25px;
-	left: 215px;
+	top: 0px;
+	left: 210px;
 	text-align: center;
+	border: none;
 	color: #fff;
 	background-color: #DDDDDD;
 }
+.explore .submit:hover {
+	background-color: #3D3B5B;
+}
+
 /*标签选择*/
 .tag-select {
 	position: relative;
@@ -465,4 +492,82 @@ li {
 }
 .tags .font-bigger {
 	font-size: 24px;
+}
+/*gallery*/
+.gallery {
+	width: 100%;
+	height: 1100px;
+	margin: 0 auto;
+	background-color: #eee;
+}
+.gallery-whole {
+	position: relative;
+	width: 980px;
+	height: 1000px;
+	background-color: #eee;
+	margin: 0 auto;
+}
+.gallery-center {
+	position: relative;
+	width: 670px;
+	height: 1000px;
+	float: left;
+	margin-top: 25px;
+	margin-right: 10px;
+}
+.side-bar {
+	position: relative;
+	width: 300px;
+	height: 1000px;
+	float: right;
+}
+.search {
+	position: absolute;
+	width: 300px;
+	height: 90px;
+	line-height: 90px;
+	background-color: #fff;
+	margin-top: 25px;
+}
+.explore {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	width: 260px;
+	height: 50px;
+	line-height: 50px;
+	border: 1px solid #ddd;
+}
+.explore:hover {
+	border-color: #3D3B5B;
+}
+.explore .keyword {
+	position: relative;
+	width: 260px;
+	height: 50px;
+	margin: 0;
+	border: none;
+	outline: medium;
+	background-image: url(../img/search.png);
+	background-repeat: none;
+	background-size:210px 50px;
+}
+.keyword:focus {
+	background-image: none;
+}
+.explore .submit {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 20px;
+	top: 0px;
+	left: 210px;
+	text-align: center;
+	border: none;
+	color: #fff;
+	background-color: #DDDDDD;
+}
+.explore .submit:hover {
+	background-color: #3D3B5B;
 }
