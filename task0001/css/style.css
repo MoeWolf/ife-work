@@ -521,8 +521,9 @@ li {
 	height: 1000px;
 	float: right;
 }
+/*搜索框*/
 .search {
-	position: absolute;
+	position: relative;
 	width: 300px;
 	height: 90px;
 	line-height: 90px;
@@ -570,4 +571,57 @@ li {
 }
 .explore .submit:hover {
 	background-color: #3D3B5B;
+}
+/*排行榜*/
+.leaderboard {
+	position: relative;
+	width: 300px;
+	height: 250px;
+	margin-top: 15px;
+	background-color: #fff;	
+}
+.leaderboard p {
+	padding: 20px;
+	color: #666666;
+	font-size: 16px;
+}
+
+.leaderboard li {
+	margin-bottom: 10px;
+}
+.ranking-num {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	margin-left: 20px;
+	text-align: center;
+	border-radius: 50%;
+	background-color: #3D3B5B;
+	color: #fff;
+	font-size: 16px;
+}
+.ranking-bar {
+	display: inline-block;
+	position: relative;
+	width: 150px;
+	height: 16px;
+	margin-left: 10px;
+	margin-right: 6px;
+	top: 5px;
+	border: 1px solid #3D3B5B;	
+}
+.ranking-bar-wrap{
+	height: 16px;
+	background-color: #3D3B5B;
+}
+.ranking-des {
+	font-size: 14px;
+}
+.gallery-content {
+	width: 670px;
+	height: 1500px;
+	float: left;
+	margin: 80px 10px 0 0;
+	background-color: #fff;
 }
