@@ -599,7 +599,7 @@ li {
 	border-radius: 50%;
 	background-color: #3D3B5B;
 	color: #fff;
-	font-size: 16px;
+	font-size: 12px;
 }
 .ranking-bar {
 	display: inline-block;
@@ -616,7 +616,7 @@ li {
 	background-color: #3D3B5B;
 }
 .ranking-des {
-	font-size: 14px;
+	font-size: 12px;
 }
 .gallery-content {
 	width: 670px;
@@ -624,4 +624,62 @@ li {
 	float: left;
 	margin: 80px 10px 0 0;
 	background-color: #fff;
+}
+/*导航栏的样式*/
+.gallery-nav {
+	position: absolute;
+	top: 22px;
+	background-color: #fff;
+	
+}
+.gallery-nav a {
+	display: inline-block;
+	margin: 0;
+	
+}
+.gallery-nav-block {
+	padding: 15px 20px 20px 20px;
+	margin: 0;
+	font-size: 12px;
+	color: #000;
+	height: 16px;
+	line-height: 16px;
+	border-right: 2px solid #DDDDDD;
+	border-bottom: 2px solid #DDDDDD;
+}
+.gallery-block-5 {
+	border-right: none;
+}
+.block1 {
+	border-top: 5px solid #00FF80;	
+}
+.block2 {	
+	border-top: 5px solid #FFFF80;
+}
+.block3 {	
+	border-top: 5px solid #FF8040;
+}
+.block4 {	
+	border-top: 5px solid #808080;
+}
+.block5 {	
+	border-top: 5px solid #FF80FF;
+}
+.gallery-nav-block:hover {
+	border-bottom: none;
+}
+.block1:hover {
+	border-top: 5px solid #008080;	
+}
+.block2:hover {	
+	border-top: 5px solid #918F09;
+}
+.block3:hover {	
+	border-top: 5px solid #CE4806;
+}
+.block4:hover {	
+	border-top: 5px solid #625E5E;
+}
+.block5:hover {	
+	border-top: 5px solid #AC04AE;
 }
