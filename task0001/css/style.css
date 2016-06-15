@@ -769,3 +769,97 @@ li {
 	font-size: 12px;
 	color: #999999;
 }
+/*about样式*/
+.about {
+	width: 980px;
+	height: 1500px;
+	margin: 100px auto 50px;
+	background-color: #FFFFFF;
+}
+.about .items h2,p {
+	display: inline-block;
+	margin: 0;
+}
+.general {
+	float: left;
+	width: 487px;
+	height: 1500px;
+	border-right: 6px solid #EEEEEE;
+	font-size: 16px;
+	color: #000000;
+	
+}
+.about .items {
+	margin-bottom: 80px;
+}
+.items {
+	position: relative;
+	width: 500px;
+	height: 250px;
+	margin-left:300px;
+	margin-right: 180px;
+}
+.items img {
+	position: absolute;
+	width: 180px;
+	height: 180px;
+	border: 10px solid #EEEEEE;
+	border-radius: 50%;
+	top: -60px;
+	left: 90px;
+}
+.items h2 {
+	position: absolute;
+	left: 50px;
+	top: 150px;
+	font-size: 16px;
+	color: #000000;
+}
+.items p {
+	position: absolute;
+	left: 250px;
+	top: 150px;
+	font-size: 14px;
+	color: #000;
+}
+.items-s img {
+	position: absolute;
+	width: 140px;
+	height: 140px;
+	border: 6px solid #EEEEEE;
+	border-radius: 50%;
+	top: -50px;
+	left: 115px;
+}
+.about-contact a {
+	color: #000000;
+}
+.items .year {
+	width: 70px;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	border: 6px solid #EEEEEE;
+	font-size: 14px;
+	color: #000;
+	background-color: #FFFFFF;
+	border-radius: 30%;
+}
+.items .year-2008 {
+	position: absolute;
+	top: 142px;
+	left: 150px;
+}
+.items .year-2011 {
+	position: absolute;
+	top: 200px;
+	left: 150px;
+}
+.items .edu-2008 {
+	position: absolute;
+	top: 208px;
+	left: 250px;
+}
+.items p.self-introduce {
+	text-indent: 2em;
+}
