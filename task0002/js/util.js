@@ -10,7 +10,7 @@ function isArray(arr) {
 function isFunction(fn) {
 	return Object.prototype.toString.call(fn) === '[object function]';
 }
-
+//task2.2
 // 使用递归来实现一个深度克隆，可以复制一个目标对象，返回一个完整拷贝
 // 被复制的对象类型会被限制为数字、字符串、布尔、日期、数组、Object对象。不会包含函数、正则对象等
 function cloneObject(src) {
@@ -68,6 +68,7 @@ console.log(tarObj.a);      // 1
 console.log(tarObj.b.b1[0]);    // "hello"
 */
 
+//task2.3
 // 对数组进行去重操作，只考虑数组中元素为数字或字符串，返回一个去重后的数组
 // 最简单数组去重法  
 function uniqArray(array){  
@@ -120,6 +121,7 @@ console.log(uniqArray3(a).length);
 console.timeEnd('uniqArray3')
 */
 
+//task2.4
 // 实现一个简单的trim函数，用于去除一个字符串，头部和尾部的空白字符
 // 假定空白字符只有半角空格、Tab
 // 练习通过循环，以及字符串的一些基本方法，分别扫描字符串str头部和尾部是否有连续的空白字符，并且删掉他们，最后返回一个完成去除的字符串
@@ -151,6 +153,7 @@ str = trim(str);
 console.log(str); // 'hi!'
 */
 
+//task2.5
 // 实现一个遍历数组的方法，针对数组中每一个元素执行fn函数，并将数组索引和元素作为参数传递
 function each(arr, fn) {
     for (var i=0;i<arr.length;i++) {
@@ -173,6 +176,7 @@ function output(item, index) {
 }
 each(arr, output);  // 0:java, 1:c, 2:php, 3:html */
 
+//task2.6
 // 获取一个对象里面第一层元素的数量，返回一个整数
 function getObjectLength(obj) {
 	var num = 0;
@@ -198,6 +202,7 @@ console.log(getObjectLength(obj)); // 3
 
 //学习正则表达式，在`util.js`完成以下代码
 
+//task2.7
 // 判断是否为邮箱地址
 function isEmail(emailStr) {
     // your implement
@@ -208,3 +213,9 @@ function isMobilePhone(phone) {
     // your implement
 }
 
+
+//task3.1
+// 为element增加一个样式名为newClassName的新样式
+function addClass(element, newClassName) {
+    
+}
