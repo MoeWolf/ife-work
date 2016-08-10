@@ -269,27 +269,70 @@ function getPosition(element) {
 	}
 }
 
-//
-// 实现一个简单的Query
-/*
- 可以通过id获取DOM对象，通过#标示，例如
-$("#adom");  返回id为adom的DOM对象
-
- 可以通过tagName获取DOM对象，例如
-$("a");  返回第一个<a>对象
-
- 可以通过样式名称获取DOM对象，例如
-$(".classa");  返回第一个样式定义包含classa的对象
-
- 可以通过attribute匹配获取DOM对象，例如
-$("[data-log]");  返回第一个包含属性data-log的对象
-
-$("[data-time=2015]");  返回第一个包含属性data-time且值为2015的对象
-
- 可以通过简单的组合提高查询便利性，例如
-$("#adom .classa");  返回id为adom的DOM所包含的所有子节点中，第一个样式定义包含classa的对象
-*/
-
-function $(selector) {
-    
+//task4.1
+// 给一个element绑定一个针对event事件的响应，响应函数为listener
+function addEvent(element, event, listener) {
+    element.addEventListener(event,listener);
 }
+
+// 移除element对象对于event事件发生时执行listener的响应
+function removeEvent(element,event,listener) {
+	element.removeEventListener(event,listener)
+}
+
+// 实现对click事件的绑定
+function addClickEvent(element, listener) {
+    element.addEventListener('click',listener)
+}
+
+// 实现对于按Enter键时的事件绑定
+function addEnterEvent(element, listener) {
+    addEvent(element,'keydown',function(e) {
+    	var event = e || window.event;
+    	var keyCode = event.which || event.keyCode;
+    	if (keyCode === 13) {
+    		listener.call(element,event);
+    	}
+    })
+}
+
+             
+//5.1 任务描述
+//判断是否为IE浏览器，返回-1或者版本号
+function isIE() {
+    return /msie (\d+\.\d+)/i.test(navigator.userAgent)?
+    (document.documentMode || + RegExp['\x241']) : -1;
+}
+
+
+// 设置cookie
+function isValidCookieName(cookieName) {
+	return (new RegExp('^[^\\x00-\\x20\\x7f\\(\\)<>@,;:\\\\\\\"\\[\\]\\?=\\{\\}\\/\\u0080-\\uffff]+\x24'))
+	.test(cookieName);
+}
+
+function setCookie(cookieName, cookieValue, expiredays) {
+    if(!isValidCookieName(cookieName)) {
+    	return;
+    }
+    
+    var exdays = '';
+    if(expiredays) {
+    	exdays = new Date();
+    	exdays.setDate(exdays.getDate() + expiredays);
+    	var expires = ';expirss=' + exdays.toUTCString();   // toGMTString is deprecated and should no longer be used, it's only there for backwards compatibility, use toUTCString() instead
+    }
+    document.cookie = cookieName + '=' + encodeURIComponent(cookieValue) + expires;	
+}
+
+// 获取cookie值
+function getCookie(cookieName) {
+    if(!isValidCookieName(cookieName)) {
+    	return null;
+    }
+    var va = new RegExp(cookieName + '=(.*)($|;)');
+    return va.exec(document.cookie)[1] || null;
+}
+
+
+//6. Ajax
