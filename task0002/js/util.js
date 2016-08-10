@@ -336,3 +336,78 @@ function getCookie(cookieName) {
 
 
 //6. Ajax
+function ajax(url, options) {
+	var xmlhttp;
+	if(window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
+		xmlhttp = new XMLHttpRequest();
+	} else { // code for IE6, IE5
+		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	
+	//处理data
+	if(options.data) {
+		var dataarr = [];
+		for(var items in options.data) {
+			dataarr.push(item + '=' + encodeURI(options.data[items]));
+		}
+		var data = dataarr.join('&');
+	}
+	
+	//默认type
+		if(!options.type) {
+			options.type = 'GET';
+		}
+		options.type = options.type.toUpperCase();
+		
+	//发送请求
+	if(options.type === 'GET') {
+		var myURL = '';
+		if(options.data) {
+			myURL = url + '?' + data;
+		}
+		if(!options.data) {
+			myURL = url;
+		}
+		xmlhttp.open('GET',myURL,true);
+		xmlhttp.send();
+	}
+	else if(options.type === 'POST') {
+		xmlhttp.open('POST', url, true);
+        xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xmlhttp.send(data);
+	}
+	
+	//readyState
+	  xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState === 4) {
+            if (xmlhttp.status === 200) {
+                if (options.onsuccess) {
+                    options.onsuccess(xmlhttp.responseText, xmlhttp.responseXML);
+                }
+            }
+            else {
+                if (options.onfail) {
+                    options.onfail();
+                }
+            }
+        }
+    }
+}
+
+// 使用示例：
+/*
+ajax(
+    'prompt.php',
+    {
+        data: {
+            q: 'a'
+        },
+        onsuccess: function (responseText, xhr) {
+            console.log(responseText);
+        },
+        onfail : function () {
+            console.log('fail');
+        }
+    }
+);
+*/
