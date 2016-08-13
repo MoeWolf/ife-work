@@ -70,16 +70,14 @@ console.log(tarObj.b.b1[0]);    // "hello"
 
 //task2.3
 // 对数组进行去重操作，只考虑数组中元素为数字或字符串，返回一个去重后的数组
-// 最简单数组去重法  
 function uniqArray(array){  
-var n = []; //一个新的临时数组  
-//遍历当前数组  
-for(var i = 0; i < array.length; i++){  
-//如果当前数组的第i已经保存进了临时数组，那么跳过，  
-//否则把当前项push到临时数组里面  
-if (n.indexOf(array[i]) == -1) n.push(array[i]);  
-}  
-return n;  
+	var newArray = [];
+	for(var i=0,len=array.length;i<len;i++) {
+		if(array[i] !== '' && newArray.indexOf(array[i])<0) {
+			newArray.push(array[i]);
+		}
+	}
+	return newArray;
 } 
 
 //优化遍历数组法
@@ -267,6 +265,57 @@ function getPosition(element) {
 		x:x;
 		y:y;
 	}
+}
+//task3.2
+//实现一个简单的Query
+function $(selector) {
+    var ele = document;
+    var sele = selector.replace(/\s+/, ' ').split(' ');    // 去除多余的空格并分割
+
+    for (var i = 0, len = sele.length; i < len; i++) {
+
+        switch (sele[i][0]) {    // 从子节点中查找
+            case '#':
+                ele = ele.getElementById(sele[i].substring(1));
+                break;
+            case '.':
+                ele = ele.getElementsByClassName(sele[i].substring(1))[0];
+                break;
+            case '[':
+                var valueLoc = sele[i].indexOf('=');
+                var temp = ele.getElementsByTagName('*');
+                var tLen = temp.length;
+                if (valueLoc !== -1) {
+                    var key = sele[i].substring(1, valueLoc);
+                    var value = sele[i].substring(valueLoc + 1, sele[i].length - 1);
+                    for (var j = 0; j < tLen; j++) {
+                        if (temp[j][key] === value) {
+                            ele = temp[j];
+                            break;
+                        }
+                    }
+                }
+                else {
+                    var key = sele[i].substring(1, sele[i].length - 1);
+                    for (var j = 0; j < tLen; j++) {
+                        if (temp[j][key]) {
+                            ele = temp[j];
+                            break;
+                        }
+                    }
+                }
+                break;
+            default :
+                ele = ele.getElementsByTagName(sele[i])[0];
+                break;
+        }
+    }
+
+    if (!ele) {
+        ele = null;
+    }
+
+    return ele;
 }
 
 //task4.1
