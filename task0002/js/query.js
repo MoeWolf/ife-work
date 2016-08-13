@@ -1,3 +1,6 @@
+
+
+//Query
 function $(selector) {
     var ele = document;
     var sele = selector.replace(/\s+/, ' ').split(' ');    // 去除多余的空格并分割
@@ -48,6 +51,7 @@ function $(selector) {
     return ele;
 }
 
+//数组去重
 function uniqArray(arr) {
     var new_array = [];
     for (var i = 0, len = arr.length; i < len; i++) {
@@ -56,4 +60,9 @@ function uniqArray(arr) {
         }
     }
     return new_array;
+}
+
+//去除字符串首尾的空格
+function trim(str) {
+	return str.replace(/^\s+|\s+$/g, '');
 }
