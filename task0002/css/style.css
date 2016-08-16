@@ -112,7 +112,7 @@ li {
     background-color: #fff;
     border-radius: 6px;
     color: #666;
-    padding: 6px 24px;
+    padding: 6px 20px;
     border: none;
     outline: none;
     margin-right: 10px;
@@ -162,3 +162,47 @@ li {
     border: 1px solid #4d90fe;
 }
 
+/*task0002_3*/
+.container {
+	width: 600px;
+	height: 400px;
+	overflow: hidden;
+	/*border: 1px solid #000;*/
+	position: relative;
+}
+.picList {
+	width: 5400px;
+	height: 400px;
+	position: absolute;
+	z-index: 1;
+}
+.picList img {
+	width: 600px;
+	height: 400px;
+	float: left;
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+}
+
+.container .button {
+	width: 102px;
+	height: 12px;
+	position: absolute;
+	z-index: 2;
+	left: 249px;
+	top: 370px;
+}
+.container .button li {
+	width: 10px;
+	height: 10px;
+	float: left;
+	margin-right: 5px;
+	border: 1px solid #000;
+	border-radius: 50%;
+	cursor: pointer;
+	background-color: #C0C0C0;
+}
+.container .button .light {
+	background-color: #0f0;
+}
