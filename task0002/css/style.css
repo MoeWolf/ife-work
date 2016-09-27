@@ -167,7 +167,6 @@ li {
 	width: 600px;
 	height: 400px;
 	overflow: hidden;
-	/*border: 1px solid #000;*/
 	position: relative;
 }
 .picList {
@@ -205,4 +204,29 @@ li {
 }
 .container .button .light {
 	background-color: #0f0;
+}
+/*task0002_5*/
+#dragContainer {
+	width: 980px;
+	margin: 0 auto;
+}
+#dragContainer ol {
+	width: 160px;
+	height: 385px;
+	margin-right: 150px;
+	border: 1px solid #000;
+	float: left;
+	background-color: #39ABF0;
+	
+}
+#dragContainer .drag {
+	width: 160px;
+	height: 35px;
+	font-size: 16px;
+	color: #fff;
+	line-height: 35px;
+	text-align: center;
+	border-bottom: 1px solid #000;
+	background-color: #4F4D69;
+	cursor: pointer;
 }

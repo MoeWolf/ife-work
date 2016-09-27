@@ -66,3 +66,30 @@ function uniqArray(arr) {
 function trim(str) {
 	return str.replace(/^\s+|\s+$/g, '');
 }
+
+//添加事件
+function addEvent(element,event,listener) {
+	element['on' + event] = listener;
+}
+//移除事件
+function removeEvent(element,event,listener) {
+	element['on' + event] = null;
+}
+//绑定click事件
+function addClickEvent(element,listener) {
+	element.onclick = listener;
+}
+//对Enter事件的绑定
+function addEnterEvent(element,listener) {
+	element.onkeydown = function (e) {
+		e = e || window.event;
+		if(e.keyCode == 13) {
+			listener();
+		}
+	}
+}
+
+$.on = addEvent;
+$.un = removeEvent;
+$.click = addClickEvent;
+$.enter = addEnterEvent;

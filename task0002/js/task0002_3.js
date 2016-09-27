@@ -77,10 +77,9 @@ window.onload = function() {
 }
 
 var timer;
-
 function playRight() {
 	if(timer) {
-		stop();
+		pause();
 	}
 	timer = setInterval(function() {
 		$('.next').onclick();
@@ -89,7 +88,7 @@ function playRight() {
 
 function playLeft() {
 	if(timer) {
-		stop();
+		pause();
 	}
 	timer = setInterval(function() {
 		$('.prev').onclick();
