@@ -1,9 +1,11 @@
 
 
+
+var wrap = document.getElementsByClassName('drag-wrap');
+
 //事件函数
 function dragStart (e) {
 	var dragWrap = $('#dragContainer').offsetLeft;
-	//console.log(dragWrap);
 	e = e || window.event;
 	var parent = this.parentNode;
 	startX = e.clientX;
@@ -12,9 +14,9 @@ function dragStart (e) {
 	startLeft = parent.offsetLeft - dragWrap + 80;
 	this.style.zIndex = 1;
 	moveDrag(nextDrag(this),-36);
-	console.log(dragWrap);
-	console.log($('#dragContainer').offsetParent.tagName);
-	console.log(parent.parentNode.tagName);
+//	console.log(startLeft);
+//	console.log($('#dragContainer').offsetParent.tagName);
+//	console.log(parent.offsetParent.tagName);
 }
 
 function dragging (ele) {
@@ -28,7 +30,11 @@ function dragOver (e) {
 }
 
 function drop (e) {
-	
+	e = e || window.event;
+	e.preventDefault();
+	var location = getLocation(e);
+	console.log(location[0]);
+	console.log(location[1]);
 }
 
 //工具函数
@@ -47,6 +53,30 @@ function moveDrag(ele,distance) {
 	}
 }
 
+function getLocation(e) {
+	var location = [];
+	e = e || window.event;
+	var moveX = e.clientX - startX;
+	var moveY = e.clientY - startY;
+	var x = startLeft + moveX;
+	var y = startTop + moveY;
+	
+	if(x < 230) {
+		location[0] = 0;
+	}
+	else if(x >= 230 && x<= 500) {
+		location[0] = 1;
+	}
+	else{
+		location[0] = 2;
+	}
+	
+	location[1] = Math.floor((y+18)/36);
+	var dragNum = wrap[location[0]].getElementsByClassName('drag').length;
+	location[1] = Math.max(location[1],0);
+	location[1] = Math.min(location[1],dragNum);
+	return location;
+}
 
 window.onload=function () {
 	var drag = document.getElementsByClassName('drag');
