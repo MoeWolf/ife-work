@@ -29,12 +29,62 @@ function dragOver (e) {
 	e.preventDefault();
 }
 
-function drop (e) {
-	e = e || window.event;
-	e.preventDefault();
-	var location = getLocation(e);
-	console.log(location[0]);
-	console.log(location[1]);
+//function drop (e) {
+//	e = e || window.event;
+//	e.preventDefault();
+//	var location = getLocation(e);
+//	console.log(location[0]);
+//	console.log(location[1]);
+//	var thisWrap = wrap[location[0]];
+//	var thisDrag = thisWrap.getElementsByClassName('drag')[location[1]];
+//	if(thisDrag) {
+//		var placeTop = thisDrag.style.top;
+//	}
+//	else{
+//		var beforeWrap = thisWrap.getElementsByClassName('drag')[location[1]-1];
+//		if(beforeWrap) {
+//			var beforeTop = beforeWrap.style.top;
+//		}
+//		else {
+//			beforeTop = -36;
+//		}
+//		var placeTop = beforeTop + 36 + 'px';
+//	}
+//	moveDrag(thisDrag, 36);
+//	
+//	var placeDrag = document.getElementsByClassName('draging')[0];
+//	placeDrag.style.top = placeTop;
+//	placeDrag.style.zIndex = 0;
+//	placeDrag.className = 'drag';
+//	thisWrap.insertBefore(placeDrag,thisDrag);
+//}
+
+function drop(e) {                                           // 拖动结束，将滑块加到新容器
+    e = e || window.event;
+    e.preventDefault();                                          // 避免浏览器对容器的默认处理（默认以链接形式打开）
+    var location = getLocation(e);                               // 滑块降落的位置
+    var myWrap = wrap[location[0]];
+    var myDrag = myWrap.getElementsByClassName('drag')[location[1]];
+    if (myDrag) {
+        var myTop = myDrag.style.top;
+    }
+    else {                                                       // 兼容降落位置没有滑块的情况
+        var beforeDrag = myWrap.getElementsByClassName('drag')[location[1] - 1];
+        if (beforeDrag) {
+            var beforeTop = parseInt(beforeDrag.style.top);
+        }
+        else {                                                   // 兼容容器中没有其他滑块的情况
+            beforeTop = -36;
+        }
+        var myTop = beforeTop + 36 + 'px';
+    }
+    moveDrag(myDrag, 36);
+
+    var block = document.getElementsByClassName('draging')[0];  // 将被拖拽滑块加到新容器
+    block.style.top = myTop;
+    block.style.zIndex = 0;
+    block.className = 'drag';
+    myWrap.insertBefore(block, myDrag);
 }
 
 //工具函数
