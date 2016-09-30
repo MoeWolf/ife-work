@@ -217,7 +217,7 @@ li {
 	border: 1px solid #000;
 	float: left;
 	background-color: #39ABF0;
-	
+	position: relative;
 }
 #dragContainer .drag {
 	width: 160px;
@@ -226,7 +226,13 @@ li {
 	color: #fff;
 	line-height: 35px;
 	text-align: center;
-	border-bottom: 1px solid #000;
+	border: 1px solid #000;
+	margin: -1px;
 	background-color: #4F4D69;
 	cursor: pointer;
+	left: 0;
+	position: absolute;
+}
+.draging {
+	visibility: hidden;
 }
