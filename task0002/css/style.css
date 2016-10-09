@@ -142,8 +142,7 @@ li {
 
 /*task0002_2*/
 .myDateText {
-    width: 980px;
-    border: 1px solid #ccc;
+    width: 962px;
     padding: 8px;
     font-size: 16px;
     -webkit-border-radius: 4px;
@@ -205,6 +204,31 @@ li {
 .container .button .light {
 	background-color: #0f0;
 }
+
+/*task0002_4*/
+.select {
+	width: 978px;
+    text-align: center;
+    font-size: 16px;
+    -webkit-border-radius: 4px;
+    outline: none;
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    border-top: 0;
+    border-radius: 0;
+    box-shadow: 0px 3px 5px #C0C0C0;
+}
+.select li {
+	height: 30px;
+	background-color: #fff;
+	text-align: left;
+	line-height: 30px;
+	padding-left: 9px;
+}
+.myText {
+	border-radius: 0;
+}
+
 /*task0002_5*/
 #dragContainer {
 	width: 980px;
