@@ -225,6 +225,10 @@ li {
 	line-height: 30px;
 	padding-left: 9px;
 }
+.select li.active {
+	background-color: #c0c0c0;
+	color: #fff;
+}
 .myText {
 	border-radius: 0;
 }

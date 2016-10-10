@@ -3,7 +3,6 @@ var myInput = $('.myDateText');
 var selectBar = $('.select');
 var selec = selectBar.getElementsByTagName('li');
 
-
 addInputEvent();
 
 function addInputEvent () {
@@ -14,7 +13,6 @@ function addInputEvent () {
 		myInput.attachEvent('onpropertychange',onPropChanged);
 	}
 }
-
 
 function onInput(event) {
 	var myText = event.target.value;
@@ -30,7 +28,6 @@ function onPropChanged(event) {
 }
 
 function handleInput(inputText) {
-	console.log(inputText);
 	if(inputText === '') {
 		selectBar.innerHTML = '';
 	}
@@ -47,30 +44,73 @@ function handleInput(inputText) {
 					selectBar.innerHTML = litext;
 				}
 		}
-	onclick();
+	onmouse();
 	}
 
-function onclick() {
+function onmouse() {
 	for(var i = 0, len = selec.length; i < len; i++) {
-		console.log(selec[i]);
 		selec[i].addEventListener('click', function(e) {
 			var seltar = this.innerHTML;
-			console.log(seltar);
 			myInput.value = seltar;
 			clearSelectBar();
 		});
 		selec[i].addEventListener('mousemove', function(e) {
-			this.style.backgroundColor = '#c0c0c0';
-			this.style.color = '#fff';
+			this.className = 'active';
 		});
 		selec[i].addEventListener('mouseleave', function(e) {
-			this.style.backgroundColor = '#fff';
-			this.style.color = '#000';
+			this.className = '';
 		});
 	}
-	
 }
 
 function clearSelectBar() {
 	selectBar.style.display = 'none';
+}
+
+document.onkeydown = function(e) {
+	if(e.keyCode == 40) {
+		var actli = selectBar.getElementsByClassName("active")[0];
+		if(actli) {
+			if(actli.nextElementSibling == null) {
+				return false;
+			}
+			actli.nextElementSibling.className = "active";
+			actli.className = "";
+		}
+		else {
+			var allLi = selectBar.getElementsByTagName("li");
+			allLi[0].className = 'active';
+		}
+	}
+	if(e.keyCode == 38) {
+		var actli = selectBar.getElementsByClassName("active")[0];
+		if(actli) {
+			if(actli.previousElementSibling == null) {
+				return false;
+			}
+			actli.previousElementSibling.className = "active";
+			actli.className = "";
+		}
+	}
+	if(e.keyCode == 13) {
+		var actli = selectBar.getElementsByClassName("active")[0];
+		var seltar = actli.innerHTML;
+		myInput.value = seltar;
+		clearSelectBar();
+	}
+}
+
+
+function onkeyboard(e) {
+	e = e || window.event;
+	for(var i = 0, len = selec.length; i < len; i++) {
+		selec[i].addEventListener('keyup',function() {
+			if(e.keyCode == '40') {
+				this.style.backgroundColor = '#fff';
+				this.style.color = '#000';
+				this.nextSibling.style.backgroundColor = '#c0c0c0';
+				this.nextSibling.style.color = '#fff';
+			}
+		})
+	}
 }
