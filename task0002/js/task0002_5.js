@@ -1,7 +1,16 @@
-
-
-
 var wrap = document.getElementsByClassName('drag-wrap');
+
+window.onload=function () {
+	var drag = document.getElementsByClassName('drag');
+	for(var i=0,len=drag.length;i<len;i++) {
+		drag[i].draggable = true;
+		drag[i].style.top = (i%6*36) + 'px';
+		$.on(drag[i],'dragstart',dragStart);
+		$.on(drag[i],'drag',dragging);
+	}
+	$.on(document.body,'dragover',dragOver);
+	$.on(document.body,'drop',drop);
+}
 
 //事件函数
 function dragStart (e) {
@@ -14,9 +23,6 @@ function dragStart (e) {
 	startLeft = parent.offsetLeft - dragWrap + 80;
 	this.style.zIndex = 1;
 	moveDrag(nextDrag(this),-36);
-//	console.log(startLeft);
-//	console.log($('#dragContainer').offsetParent.tagName);
-//	console.log(parent.offsetParent.tagName);
 }
 
 function dragging (ele) {
@@ -28,36 +34,6 @@ function dragging (ele) {
 function dragOver (e) {
 	e.preventDefault();
 }
-
-//function drop (e) {
-//	e = e || window.event;
-//	e.preventDefault();
-//	var location = getLocation(e);
-//	console.log(location[0]);
-//	console.log(location[1]);
-//	var thisWrap = wrap[location[0]];
-//	var thisDrag = thisWrap.getElementsByClassName('drag')[location[1]];
-//	if(thisDrag) {
-//		var placeTop = thisDrag.style.top;
-//	}
-//	else{
-//		var beforeWrap = thisWrap.getElementsByClassName('drag')[location[1]-1];
-//		if(beforeWrap) {
-//			var beforeTop = beforeWrap.style.top;
-//		}
-//		else {
-//			beforeTop = -36;
-//		}
-//		var placeTop = beforeTop + 36 + 'px';
-//	}
-//	moveDrag(thisDrag, 36);
-//	
-//	var placeDrag = document.getElementsByClassName('draging')[0];
-//	placeDrag.style.top = placeTop;
-//	placeDrag.style.zIndex = 0;
-//	placeDrag.className = 'drag';
-//	thisWrap.insertBefore(placeDrag,thisDrag);
-//}
 
 function drop(e) {                                           // 拖动结束，将滑块加到新容器
     e = e || window.event;
@@ -88,7 +64,7 @@ function drop(e) {                                           // 拖动结束，�
 }
 
 //工具函数
-function nextDrag (ele) {
+function nextDrag (ele) {								//获取ele之后的滑块
 	var brother = ele.nextSibling;
 	while(brother && brother.nodeName === '#text') {
 		brother = nextDrag(brother);
@@ -128,14 +104,4 @@ function getLocation(e) {
 	return location;
 }
 
-window.onload=function () {
-	var drag = document.getElementsByClassName('drag');
-	for(var i=0,len=drag.length;i<len;i++) {
-		drag[i].draggable = true;
-		drag[i].style.top = (i%6*36) + 'px';
-		$.on(drag[i],'dragstart',dragStart);
-		$.on(drag[i],'drag',dragging);
-	}
-	$.on(document.body,'dragover',dragOver);
-	$.on(document.body,'drop',drop);
-}
+

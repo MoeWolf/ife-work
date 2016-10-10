@@ -1,25 +1,25 @@
-var nameList = ['Anna','Brittany','Cinderella','Diana','Eva','Fiona','Gunda','Hege','Inga','Johanna','Kitty','Linda','Nina','Ophelia','Petunia','Amanda','Raquel','Cindy','Doris','Eve','Evita','Sunniva','Tove','Unni','Violet','Liza','Elizabeth','Ellen','Wenche','Vicky','Quality','Quote','Work','Review','Yet','You','Zero','Zip','Xylophone','Xylene','Material'];
+var nameList = ['Anna','Brittany','Cinderella','Diana','Eva','Fiona','Gunda','Hege','Inga','Johanna','Kitty','Linda','Nina','Ophelia','Petunia','Amanda','Raquel','Cindy','Doris','Eve','Evita','Sunniva','Tove','Unni','Violet','Liza','Elizabeth','Ellen','Wenche','Vicky','Quality','Quote','Work','Review','Yet','You','Zero','Zip','Xylophone','Xylene','Material'];		//提示数据
 var myInput = $('.myDateText');
 var selectBar = $('.select');
 var selec = selectBar.getElementsByTagName('li');
 
 addInputEvent();
 
-function addInputEvent () {
-	if(myInput.addEventListener) {
+function addInputEvent () {										//添加输入事件
+	if(myInput.addEventListener) {								//all browsers except IE before version 9
 		myInput.addEventListener('input',onInput);
 	}
-	else if(myInput.attachEvent) {
+	else if(myInput.attachEvent) {								//IE support
 		myInput.attachEvent('onpropertychange',onPropChanged);
 	}
 }
 
-function onInput(event) {
+function onInput(event) {										// Firefox, Google Chrome, Opera, Safari from version 5, Internet Explorer from version 9
 	var myText = event.target.value;
 	handleInput(myText);
 }
 
-function onPropChanged(event) {
+function onPropChanged(event) {									//IE support
 	var myText = '';
 	if(event.propertyName.toLowerCase() == 'value') {
 		myText = event.srcElement.value;
@@ -27,7 +27,7 @@ function onPropChanged(event) {
 	}
 }
 
-function handleInput(inputText) {
+function handleInput(inputText) {								//匹配输入的字符，并创建子选项
 	if(inputText === '') {
 		selectBar.innerHTML = '';
 	}
@@ -47,7 +47,7 @@ function handleInput(inputText) {
 	onmouse();
 	}
 
-function onmouse() {
+function onmouse() {											//鼠标事件（划过，点击）
 	for(var i = 0, len = selec.length; i < len; i++) {
 		selec[i].addEventListener('click', function(e) {
 			var seltar = this.innerHTML;
@@ -63,12 +63,12 @@ function onmouse() {
 	}
 }
 
-function clearSelectBar() {
+function clearSelectBar() {										//清除选择栏
 	selectBar.style.display = 'none';
 }
 
-document.onkeydown = function(e) {
-	if(e.keyCode == 40) {
+document.onkeydown = function(e) {								//键盘事件
+	if(e.keyCode == 40) {	//上
 		var actli = selectBar.getElementsByClassName("active")[0];
 		if(actli) {
 			if(actli.nextElementSibling == null) {
@@ -82,7 +82,7 @@ document.onkeydown = function(e) {
 			allLi[0].className = 'active';
 		}
 	}
-	if(e.keyCode == 38) {
+	if(e.keyCode == 38) {	//下
 		var actli = selectBar.getElementsByClassName("active")[0];
 		if(actli) {
 			if(actli.previousElementSibling == null) {
@@ -92,7 +92,7 @@ document.onkeydown = function(e) {
 			actli.className = "";
 		}
 	}
-	if(e.keyCode == 13) {
+	if(e.keyCode == 13) {	//ENTER
 		var actli = selectBar.getElementsByClassName("active")[0];
 		var seltar = actli.innerHTML;
 		myInput.value = seltar;
@@ -103,16 +103,3 @@ document.onkeydown = function(e) {
 	myInput.value = seltar;
 }
 
-function onkeyboard(e) {
-	e = e || window.event;
-	for(var i = 0, len = selec.length; i < len; i++) {
-		selec[i].addEventListener('keyup',function() {
-			if(e.keyCode == '40') {
-				this.style.backgroundColor = '#fff';
-				this.style.color = '#000';
-				this.nextSibling.style.backgroundColor = '#c0c0c0';
-				this.nextSibling.style.color = '#fff';
-			}
-		})
-	}
-}

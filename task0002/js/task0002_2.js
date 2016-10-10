@@ -1,5 +1,5 @@
 function showDate() {
-	var text = $('.myDateText').value; 								//
+	var text = $('.myDateText').value; 								
 	text = trim(text);
 	var enterTime = text.split('-');
 
