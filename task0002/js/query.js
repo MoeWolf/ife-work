@@ -1,7 +1,6 @@
-
-
 //Query
-function $(selector) {
+//选择器
+function $(selector) {                                      
     var ele = document;
     var sele = selector.replace(/\s+/, ' ').split(' ');    // 去除多余的空格并分割
 

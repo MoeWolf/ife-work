@@ -3,7 +3,6 @@ window.onload = function() {
 	var items = document.getElementById('lightButton').getElementsByTagName('li');
 	var index = 0;
 	animation = false;
-	//	var 
 
 	function showButton() { 							// 显示小圆点
 		for(var i = 0, len = items.length; i < len; i++) {
