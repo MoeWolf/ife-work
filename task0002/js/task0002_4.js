@@ -98,8 +98,10 @@ document.onkeydown = function(e) {
 		myInput.value = seltar;
 		clearSelectBar();
 	}
+	var actli = selectBar.getElementsByClassName("active")[0];
+	var seltar = actli.innerHTML;
+	myInput.value = seltar;
 }
-
 
 function onkeyboard(e) {
 	e = e || window.event;
